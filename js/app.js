@@ -1,3 +1,4 @@
+//controller part of MVC structure
 (function (window) {
 	'use strict';
 

@@ -1,4 +1,6 @@
 //Ben Griffith
+//model part of MVC structure
+
 //var expect = require('chai')
 //I can list my tasks
 var taskList = [ ];
