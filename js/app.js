@@ -5,9 +5,28 @@
 })(window);
 */
 //debugger;
-
+(function (window) {
+	'use strict';
 document.head.parentElement.className="js"; // It's alive!
 
+var elements = document.querySelectorAll('ul');
+var listItem = document.querySelectorAll('li');
+
+_.forEach(elements, function(element, index, elements){
+	  element.addEventListener('view', function(){
+	    //console.log(elements, index, element)
+	    elements[index].parentElement.classList.toggle('todo-list');
+	  });
+	});
+
+	_.forEach(listItem, function(element, index, elements){
+	    element.addEventListener('view', function(){
+	        element.parentElement.classList.toggle('todo-list');
+	    });
+
+})(window);
+
+/*
 var addTask = document.querySelector('header')
 	var that = this;
 	this.ENTER_KEY = 13;
@@ -15,7 +34,7 @@ var addTask = document.querySelector('header')
 	addTask.addEventListener(this.ENTER_KEY, function view(template){
 		console.log('test');
 	})
-
+*/
 
 var elements = document.querySelectorAll('.cbp-nttrigger');
 
