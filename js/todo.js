@@ -25,11 +25,12 @@ function editTask(position,newTaskName){
     return taskList[position] = newTaskName;
 }
 
-function deleteTask(position,list){
-  return taskList.splice(position, 1);
+//I can delete a task off my list?
+function deleteTask(task, taskList){
+  return list.splice(task - 1, 1);
 }
 
-function prioritizeTask(oldIndex, newIndex, taskList)
+//function prioritizeTask(oldIndex, newIndex, taskList)
 
 /*
 expect(taskList.length).to.Equal(0);
