@@ -7,7 +7,14 @@
 //debugger;
 (function (window) {
 	'use strict';
+	var list = [];
+
+	todos.addTaskToList("Remember the beer", list);
+	console.log(list);
+
 document.head.parentElement.className="js"; // It's alive!
+
+var elements = document.querySelectorAll('.cbp-nttrigger');
 
 var elements = document.querySelectorAll('ul');
 var listItem = document.querySelectorAll('li');
@@ -24,7 +31,7 @@ _.forEach(elements, function(element, index, elements){
 	        element.parentElement.classList.toggle('todo-list');
 	    });
 
-})(window);
+addTaskToList("Remember the beer", list);
 
 /*
 var addTask = document.querySelector('header')
@@ -35,8 +42,6 @@ var addTask = document.querySelector('header')
 		console.log('test');
 	})
 */
-
-var elements = document.querySelectorAll('.cbp-nttrigger');
 
 /*
 var nestedElements = document.querySelectorAll('h4');
@@ -73,3 +78,4 @@ _.forEach(nestedElements, function(element, index, nestedElements){
  		});
 });
 */
+})(window);
