@@ -44,5 +44,4 @@
     "listTasks": listTask
   };
 })(window);
-
 window.todos = todos;

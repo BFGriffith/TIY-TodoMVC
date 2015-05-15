@@ -5,7 +5,7 @@
 })(window);
 */
 
-//debugger;
+debugger;
 
 (function (window) {
 	'use strict';
