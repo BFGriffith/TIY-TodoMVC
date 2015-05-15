@@ -29,19 +29,24 @@ var addTask = document.querySelectorAll('input.new-todo');
   addEventListener('keyup', function EnterKey(event){
 		//given an HTML element <input class="new-todo">
 		if ( event.keyCode === 13 ){
-
+      var task = document.querySelector('input.new-todo').value;
+			todos.taskList.push(task);
+			console.log(todos.taskList);
 		}
 });
 //simplified:
+/*
 document.querySelectorAll('input.new-todo');
   addEventListener('keyup', function(){
-}); //end of addEventListener post EnterKey function
 
+}); //end of addEventListener post EnterKey function
+*/
 })(window);
+/*
 
 (function (window) {
 	'use strict';
-	var list = [];
+	var list = [ ];
 
 	todos.addTaskToLisgitt("Remember the beer", list);
 	console.log(list);
@@ -127,4 +132,4 @@ _.forEach(nestedElements, function(element, index, nestedElements){
  		});
 });
 */
-})(window);
+//})(window);
