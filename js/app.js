@@ -1,14 +1,5 @@
 //controller part of MVC structure
-/*
-(function (window) {
-	'use strict';
-})(window);
-*/
 
-debugger;
-
-(function (window) {
-	'use strict';
 //I can add a task...
 //1. What event should I be listening for?
 //2. What element makes sense to
@@ -26,23 +17,67 @@ debugger;
 
 //task string name goes @ <label> AND value= (value of input.edit)
 //checkbox = input.toggle  ('input.toggle').value (input is a dictionary), toggles Boolean
-var addTask = document.querySelectorAll('input.new-todo');
-  addEventListener('keyup', function EnterKey(event){
-		//given an HTML element <input class="new-todo">
-		if ( event.keyCode === 13 ){
-      var task = document.querySelector('input.new-todo').value;
-			todos.taskList.push(task);
-			console.log(todos.taskList);
-		}
-});
-//simplified:
+//debugger;
+(function (window) {
+	'use strict';
+
+	var addTask = document.querySelectorAll('input.new-todo');
+	  addTask.addEventListener('keyup', function EnterKey(event){
+			//given an HTML element <input class="new-todo">
+			if ( event.keyCode === 13 ){
+	      var task = document.querySelector('input.new-todo').value;
+				todos.taskList.push(task);
+				console.log(todos.taskList);
+			}
+
+	var newTodoInput = document.querySelector('input.new-todo');
+	var deleteTask = document.querySelector('ul.todo-list');
+	var deleteTaskButtons = document.querySelectorAll('button.destroy');
+	var deleteTask.addEventListener('mouseover', function deleteTaskController(event)){
+		console.log("delete stuff!")
+	});
+
+	document.querySelector('input.new-todo').value = "";
+
+	// UPDATE the number of tasks in the footer
+	if (todos.taskList.length === 1) {
+		(document.querySelector('span.todo-count').textContent = (todos.taskList.length + " Item Left"));
+	} else {
+		(document.querySelector('span.todo-count').textContent = (todos.taskList.length + " Items Left"));
+	};
+
+	console.log(todos.taskList);
+
+	_.forEach(deleteTaskButtons, function(element, index, deleteTaskButtons){
+		element.addEventListener('click', function(){
+			console.log("delete crap!");
+		});
+	});
+
+	_.forEach(editTask, function(element, index, editTask){
+		element.addEventListener('dblclick', function(){
+			console.log("edit this shit?");
+		})
+	})
+
+});//end of addEventListener post EnterKey function
+
+})(window);
+
+
+
+
+
+
+
+
+
+//simplified?
 /*
 document.querySelectorAll('input.new-todo');
   addEventListener('keyup', function(){
-
-}); //end of addEventListener post EnterKey function
+});
 */
-})(window);
 /*
 
 (function (window) {
