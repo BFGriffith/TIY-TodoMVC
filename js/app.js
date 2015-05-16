@@ -28,29 +28,23 @@
 
   //Given an HTML element  <input class = "new-todo">
   var newTodoInput = document.querySelector('input.new-todo')
-
+  var todoCount = document.querySelector('span.todo-count');
   //When the user types a task
   newTodoInput.addEventListener('keyup', function addTodoController(event) {
-    if (event.keyCode === 13) { //AND presses the "Enter" key
+    if (event.keyCode !== 13 || newTodoInput.value == "") return; //AND presses the "Enter" key
 
-      var task = newTodoInput.value;
-      //todos.taskList.push(task);
-      todos.addTaskToList(task, todos.taskList);
+    var task = newTodoInput.value;
 
-      document.querySelector('input.new-todo').value = "";
+    todos.addTaskToList(task, todos.taskList);
 
+    newTodoInput.value = "";
 
-      if (todos.taskList.length === 1) {
-        document.querySelector('span.todo-count').textContent = todos.taskList.length + ' Item Left';
-      } else {
-        document.querySelector('span.todo-count').textContent = todos.taskList.length + ' Items Left';
-      };
+    todos.footerTotal(todoCount);
 
-			document.querySelector('ul.todo-list').innerHTML += ("<li><div><input class='toggle' type='checkbox'><label>" + task + "<button class='destroy'>")
-      console.log(todos.taskList);
-      console.log(todos.taskList.length);
+    document.querySelector('ul.todo-list').innerHTML += ("<li><div><input class='toggle' type='checkbox'><label>" + task + "<button class='destroy'>")
+    console.log(todos.taskList);
+    console.log(todos.taskList.length);
 
-    }
 
   });
 

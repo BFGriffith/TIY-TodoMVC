@@ -14,6 +14,14 @@
     return list.push(task);
   }
 
+  function footerTotal(element) {
+    if (taskList.length === 1) {
+      element.textContent = taskList.length + ' Item Left';
+    } else {
+      element.textContent = taskList.length + ' Items Left';
+    }
+  }
+
   //I can check a task off my list...
   function completeTask(task, list) {
     return list[task - 1] += ' COMPLETE';
@@ -27,6 +35,7 @@
   window.todos = {
     "taskList": taskList,
     "addTaskToList": addTaskToList,
+    "footerTotal": footerTotal,
     "completeTask": completeTask,
     "deleteTask": deleteTask
 
